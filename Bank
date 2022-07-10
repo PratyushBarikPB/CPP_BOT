@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class bank
+{
+    //declaration of data member
+    public:
+        char name[100];
+        int account_number;
+        char type[100];
+        int balance;
+    //member func of class bank
+    //initialize func to initialize data member
+    int initial()
+    {
+        cout<<"Name- ";
+        gets(name);
+        cout<<"Type- ";
+        gets(type);
+        cout<<"Account number- ";
+        cin>>account_number;
+        cout<<"Balance: ";
+        cin>>balance;
+    }
+    int deposit()
+    {
+        int b;
+        cout<<"Enter the ammount to be deposited- "<<endl;
+        cin>>b;
+        balance+=b;
+        cout<<"New balance: "<<balance<<endl;
+    }
+    int withdrawal()
+    {
+        int w;
+        cout<<"Balance: "<<balance<<endl;
+        cout<<"Enter the amount you want to withdraw- "<<endl;
+        cin>>w;
+        balance=balance-w;
+        cout<<"Remaining- "<<balance<<endl;
+    }
+    int information()
+    {
+        int x,y;
+        cout<<"Name- ";
+        puts(name);
+        cout<<"Balance: "<<balance;
+    }
+};
+int main()
+
+{
+
+    bank sbi;
+    sbi.initial();
+    int i;
+    cout<<"1-For Deposit\n2-For Withdrawal\n3-For Information\n";
+    cin>>i;
+    if(i==1)
+    {
+        sbi.deposit();
+    }
+    else if(i==2)
+    {
+        sbi.withdrawal();
+    }
+    else if(i==3)
+    {
+        sbi.information();
+    }
+    return 0;
+}
