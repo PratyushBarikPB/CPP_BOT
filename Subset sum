@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int func(vector<int> arr,int i,int targ){
+
+	if (targ== 0 && i == arr.size())
+		return 1;
+	if (i >= arr.size())
+		return 0;
+	return func(arr,i + 1, targ)+ func(arr, i + 1, targ - arr[i])+
+	func(arr,i+1,targ+arr[i]);
+}
+
+int main()
+{
+	vector<int> arr = {5, 3, -6, 2};
+	int targ=6;
+	cout << func(arr,0,targ) << endl;
+	return 0;
+}
